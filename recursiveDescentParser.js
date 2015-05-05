@@ -50,7 +50,6 @@ function factor() {
 
 // Non Terminal Terms
 function term() {
-
   factor();
   while ((token() === '*') || (token() === '/')) {
     if (token() === '*') {
