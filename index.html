@@ -1,0 +1,57 @@
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="stylesheet.css" />
+  <script type="text/javascript" src="recursiveDescentParser.js"></script>
+  <title>CSC135 PL4: Vlad Marinov</title>
+</head>
+
+<body>
+
+  <h2> Recursive Descent Parser PL4 </h2>
+  <p>
+    <h3> BNF Grammar: </h3>
+
+    EXP ::= EXP + TERM | EXP - TERM | TERM </br>
+    TERM ::= TERM * FACTOR | TERM / FACTOR | FACTOR </br>
+    FACTOR ::= ( EXP ) | DIGIT
+    <br> DIGIT ::= 0 | 1 | 2 | 3 </br>
+  </p>
+  <p>
+    <h4> For Input string:</h4>
+    Enter any string containing the numbers 0,1,2 or 3
+    <br> and the symbols +, -, *, /, (, and ).
+    <br> And string should end with dollar sign ($).
+    <br> When you click on 'Validate' button, it will check whether the string provided is legal or not for a given BNF grammar.
+    <br>
+  </p>
+  <p>
+    Example Of Valid Strings:
+    <br> 1+2$
+    <br> 0-3*2$
+    <br> 2/(3+1)$
+    <br>
+  </p>
+  <p>
+    Example Of Invalid Strings:
+    <br> 1+2
+    <br> 1*4$
+    <br> 1*a$
+    <br>
+  </p>
+
+  <p>
+    <h4>Please Enter String to validate</h4>
+  </p>
+  <input type="text" id="input">
+  <button onclick="main()"> Validate </button>
+  <ul></ul>
+  <script>
+
+  </script>
+  </div>
+  </div>
+</body>
+
+</html>
