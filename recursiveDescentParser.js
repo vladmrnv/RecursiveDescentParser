@@ -22,7 +22,7 @@ function main() {
   if (input[input.length - 1] === "$") {
     scanner();
   } else {
-    swal("Invalid string, Missing $ ");
+    swal("Error", "String Not Ending in $", "error");
   }
 }
 
@@ -106,9 +106,9 @@ function scanner() {
   expression();
   validater('$');
   if (errorCount === 0) {
-    swal("This is a Legal Expression");
+    swal("Success", "This is a Legal Expression", "success");
   } else {
-      swal("Error found");
+      swal("Error!", "Error Found In Expression", "error");
   }
 }
 
