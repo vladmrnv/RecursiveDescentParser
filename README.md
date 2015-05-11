@@ -2,4 +2,4 @@
 
 A Recursive Descent Parser written in HTML & Javascript
 
-[Designed With](http://designmodo.github.io/Flat-UI/)
+[Designed With Flat UI](http://designmodo.github.io/Flat-UI/)
