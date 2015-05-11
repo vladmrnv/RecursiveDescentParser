@@ -1,62 +1,101 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Recursive Descent Parser</title>
+    <meta name="description" content="Flat UI Recursive Descent Parser"/>
 
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <link rel="stylesheet" type="text/css" href="stylesheet.css" />
-  <script type="text/javascript" src="recursiveDescentParser.js"></script>
-  <title>Recursive Descent Parser</title>
-</head>
+    <meta name="viewport" content="width=1000, initial-scale=1.0, maximum-scale=1.0">
 
-<body>
+    <!-- Loading Bootstrap -->
+    <link href="dist/css/vendor/bootstrap.min.css" rel="stylesheet">
 
-  <h2> Recursive Descent Parser PL4 </h2>
-  <p>
-    <h3> BNF Grammar: </h3>
+    <!-- Loading Flat UI -->
+    <link href="dist/css/flat-ui.css" rel="stylesheet">
+    <link href="docs/assets/css/demo.css" rel="stylesheet">
 
-    EXP ::= EXP + TERM | EXP - TERM | TERM </br>
-    TERM ::= TERM * FACTOR | TERM / FACTOR | FACTOR </br>
-    FACTOR ::= ( EXP ) | DIGIT
-    <br> DIGIT ::= 0 | 1 | 2 | 3 </br>
-  </p>
-  <p>
-    <h4> For Input string:</h4>
-    Enter any string containing the numbers 0, 1, 2 or 3
-    <br> and the symbols +, -, *, /, (, and ).
-    <br> And string should end with dollar sign ($).
-    <br> When you click on 'Validate' button, it will check whether the string provided is legal or not for a given BNF grammar.
-    <br>
-  </p>
-  <p>
-    Example Of Valid Strings:
-    <br> 1+2$
-    <br> 0-3*2$
-    <br> 2/(3+1)$
-    <br>
-  </p>
-  <p>
-    Example Of Invalid Strings:
-    <br> 1+2
-    <br> 1*4$
-    <br> 1*a$
-    <br>
-  </p>
+    <link rel="shortcut icon" href="img/favicon.ico">
 
-  <p>
-    <h4>Please Enter String to validate</h4>
-  </p>
-  <input type="text" id="input">
-  <button onclick="main()"> Validate </button>
-  <ul></ul>
-  <script>
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
+    <!--[if lt IE 9]>
+      <script src="dist/js/vendor/html5shiv.js"></script>
+      <script src="dist/js/vendor/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="container">
+      <div class="demo-headline">
+        <h1 class="demo-logo">
+          <div><img src="img/icons/svg/map.svg" alt="Map"></div>
+          <!-- <div class="logo"></div> -->
+          Recursive Descent Parser
+          <!-- <div><img src="img/icons/svg/map.svg" alt="Map"></div> -->
+          <small>By: Vlad Marinov</small>
+        </h1>
+      </div> <!-- /demo-headline -->
+      <div class="col-xs-4">
+      </div>
+      <div class="col-xs-8">
+      <h1 class="demo-section-title">BNF Grammar: </h1>
+    </div>
+    <div class="col-xs-6">
+      <div class="demo-type-example">
+        <span class="demo-text-note">Example Of Valid String</span>
+        <blockquote>
+          <p>
+            1+2$ <br>
+            0-3*2$ <br>
+            2/(3+1)$
+          </p>
+        </blockquote>
+      </div>
+      <div class="demo-type-example">
+        <span class="demo-text-note">Example Of Invalid String</span>
+        <blockquote>
+          <p>
+            1+2 <br>
+            1*4$ <br>
+            1*a$
+          </p>
+        </blockquote>
+      </div>
 
-  </script>
+      </div>
+      <div class="row demo-row">
+        <div class="col-xs-6">
+        <p>EXP ::= EXP + TERM | EXP - TERM | TERM<br>
+           TERM ::= TERM * FACTOR | TERM / FACTOR | FACTOR<br>
+           FACTOR ::= ( EXP ) | DIGIT<br>
+           DIGIT ::= 0 | 1 | 2 | 3
+        </p>
+        <p>Enter any string containing the numbers 0, 1, 2 or 3
+        and the symbols +, -, *, /, (, and ).
+        And string should end with dollar sign ($).
+        When you click on 'Validate' button, it will check whether the string provided is legal or not for a given BNF grammar.
+        </p>
+      </div>
+    </div>
+    <div class="row demo-row">
+      <div class="col-xs-4">
+      </div>
+      <div class="col-xs-4">
+        <h4>Enter A String: </h4>
+        <!-- <input type="text" id="input"> -->
+        <div class="form-group">
+          <input type="text" id="input" value="" placeholder="Enter A String: " class="form-control" />
+        </div>
+        <button class="btn btn-block btn-lg btn-primary" onclick="main()">Validate</button>
+      </div>
+      <div class="col-xs-4">
+      </div>
+
   </div>
-  </div>
-  <footer>
-    <p>
-      Made by: Vlad Marinov
-    </p>
-  </footer>
-</body>
 
+    <script src="recursiveDescentParser.js"></script>
+    <script src="dist/js/vendor/jquery.min.js"></script>
+    <script src="dist/js/vendor/video.js"></script>
+    <script src="dist/js/flat-ui.min.js"></script>
+    <script src="docs/assets/js/application.js"></script>
+
+  </body>
 </html>
