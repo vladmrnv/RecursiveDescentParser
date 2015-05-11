@@ -17,12 +17,12 @@ function main() {
 
   initial = 0;
   errorCount = 0;
-  input = document.getElementById("input").value;
+  input = document.getElementById("button1").value;
 
   if (input[input.length - 1] === "$") {
     scanner();
   } else {
-    confirm("Invalid string, Missing $ ");
+    swal("Invalid string, Missing $ ");
   }
 }
 
@@ -106,9 +106,9 @@ function scanner() {
   expression();
   validater('$');
   if (errorCount === 0) {
-    confirm("This is a Legal Expression");
+    swal("This is a Legal Expression");
   } else {
-      confirm("Error found");
+      swal("Error found");
   }
 }
 
@@ -117,7 +117,7 @@ function scanner() {
 
 // Linting for Errors
 function errorLint() {
-  confirm("Error found at position: " + initial);
+  swal("Error found at position: " + initial);
   errorCount = 1;
   incrementer();
 }
