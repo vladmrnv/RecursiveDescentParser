@@ -42,9 +42,9 @@ function factor() {
     expression();
     validater(')');
   } else if ((token() === '0') || (token() === '1') || (token() === '2') || (token() === '3')) {
-      digit();
+    digit();
   } else {
-      errorLint();
+    errorLint();
   }
 }
 
@@ -56,8 +56,8 @@ function term() {
       validater(token());
       factor();
     } else if (token() === '/') {
-        validater(token());
-        factor();
+      validater(token());
+      factor();
     } else {
       errorLint();
     }
@@ -81,7 +81,7 @@ function validater(t) {
   if (t === token()) {
     incrementer();
   } else {
-      errorLint();
+    errorLint();
   }
 }
 
@@ -93,10 +93,10 @@ function expression() {
       validater(token());
       term();
     } else if (token() === '-') {
-        validater(token());
-        term();
+      validater(token());
+      term();
     } else {
-        errorLint();
+      errorLint();
     }
   }
 }
@@ -108,7 +108,7 @@ function scanner() {
   if (errorCount === 0) {
     swal("Success", "This is a Legal Expression", "success");
   } else {
-      swal("Error!", "Error Found In Expression", "error");
+    swal("Error!", "Error Found In Expression", "error");
   }
 }
 
@@ -117,7 +117,7 @@ function scanner() {
 
 // Linting for Errors
 function errorLint() {
-  swal("Error found at position: " + initial);
+  swal("Error!", "Error found at position: " + initial, "error");
   errorCount = 1;
   incrementer();
 }
